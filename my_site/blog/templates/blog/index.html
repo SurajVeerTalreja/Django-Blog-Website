@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block page_title %}
+        Home Page
+    {% endblock %}
+
+    {% block css_files %}
+        <link rel="stylesheet" href="{% static 'blog/post.css' %}">
+        <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+    {% endblock %}
+
+    {% block content %}
+
+        
+        <section id='welcome'>
+            <header>
+                <img src={% static 'blog/images/profile-pic.jpg'%} alt="Suraj -- Author of this Blog">
+                <h2>Suraj__Veer's Blog</h2>
+            </header>
+            <p>Hi, I am Suraj Veer and I love to blog about random things!</p>
+        </section>
+
+        <section id='latest-posts'>
+            <h2>My Current Posts</h2>
+            <ul>
+                <!-- Remember, include function can now access all the variables in this templates
+                Therefore, inside post.html, we're able to use 'post' variable -->
+                {% for post in latest_posts %}
+                    {% include 'blog/includes/post.html' %}
+                {% endfor %}
+            </ul>
+
+        </section>
+
+        <section id="about">
+            <h2>What I Do</h2>
+
+            
+            <p>
+                Electrical Engineer working as a Technical Support Engineer in Eaton Business Enterprises Kft Hungary.
+                5+ years of Experience in different organizations and Excellent Academic record to my name.
+            </p>
+
+            <p>
+                Lately, I am enjoying this phase of becoming a Python Backend Web Developer.
+                My goal is to switch my field to a Django Web Developer, and If I could achieve it, I hope I will be Happy.
+                
+                
+            </p>
+
+        </section>
+    {% endblock %}

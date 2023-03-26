@@ -1,0 +1,28 @@
+{% load static %}
+
+<li>
+<<<<<<< HEAD
+    <article class="post">
+        <a href="{% url 'blog-post' slug=post.slug %}">
+            <img src="{% static 'blog/images/'|add:post.image %}" alt="{{ post.title }}">
+            <div class="post__content">
+                <h3>{{ post.title }}</h3>
+                <p>
+                    {{ post.excerpt }}
+                </p>
+            </div>
+        </a>
+    </article>
+=======
+    <article class='post'>
+        <a href="{% url 'post-page' post.slug %}">
+            <img src="{{ post.image_name.url }}" alt="{{ post.title }}">
+            <div class='post__content'>
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
+            </div>
+        </a>
+    </article>
+
+>>>>>>> 0eb7a81 (Blog Website Up and Running)
+</li>
